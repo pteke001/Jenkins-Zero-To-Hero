@@ -6,12 +6,17 @@ pipeline {
     }
   }
   stages {
-    stage('Checkout') {
-      steps {
-        sh 'echo passed'
+    stage('Checkout from Git'){
+            steps{
+                git branch: 'main', url: 'https://github.com/pteke001/Jenkins-Zero-To-Hero.git'
+            }
+        }
+    //stage('Checkout') {
+      //steps {
+        //sh 'echo passed'
         //git branch: 'main', url: 'https://github.com/pteke001/Jenkins-Zero-To-Hero.git'
-      }
-    }
+      //}
+    //}
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
